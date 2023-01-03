@@ -1,4 +1,4 @@
-# What is conv ? 
+# What is vptr ? 
 This package provides a set of functions for converting values to pointers.
 
 There are scenarios when you have to use a pointer to a value without creating a variable. For example

@@ -4,23 +4,17 @@ This package provides a set of functions for converting values to pointers.
 There are scenarios when you have to use a pointer to a value without creating a variable. For example
 
 
-
-
-
-Most developers use this syntax to convert value to reference to value:
+## Installation:
 
 ```
-&[]bool{true}[0]
-&[]string{"this is string"}[0]
+go get github.com/alidevhere/vptr
 ```
-But it creates the code ugly
 
-
-# Usage
+# Problem
 This package does not convert types, it just converts values to pointers.
 It is useful for converting values to pointers in the function parameters, without making code ugly.
 For example:
-
+This is how normally one would pass pointer params to a function.
 ```
 func f(a *int, b *string, c *bool) {
 	...
@@ -32,20 +26,38 @@ func main() {
 	c := true
 	f(&a, &b, &c)
 }
+```
 
-It is possible to use this package to convert values to pointers:
+Or if someone might do it this way:
+
+```
 func f(a *int, b *string, c *bool) {
 	...
 }
 
 func main() {
-	f(Int(1), String("2"), Bool(true))
+
+	f(&[]int{1}[0], &[]string{"2"}[0], &[]bool{true}[0])
 }
 
 ```
+# Solution:
 
-## Installation:
+But anyway it makes code ugly and verbose very quickly.
+So there is an easy way to do it too.
 
+
+It is possible to use this package to convert values to pointers:
 ```
-go get github.com/alidevhere/vptr
+
+"github.com/alidevhere/vptr"
+
+func f(a *int, b *string, c *bool) {
+	...
+}
+
+func main() {
+	f(vptr.Int(1), vptr.String("2"), vptr.Bool(true))
+}
+
 ```

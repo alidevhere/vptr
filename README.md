@@ -61,3 +61,28 @@ func main() {
 }
 
 ```
+
+## List of Functions:
+
+Bool(b bool) *bool 
+Int(i int) *int
+Int8(i int8) *int8
+Int16(i int16) *int16
+Int32(i int32) *int32
+Int64(i int64) *int64
+Uint(i uint) *uint
+Uint8(i uint8) *uint8
+Uint16(i uint16) *uint16
+Uint32(i uint32) *uint32
+Uint64(i uint64) *uint64
+Float32(f float32) *float32
+Float64(f float64) *float64
+Complex64(c complex64) *complex64
+Complex128(c complex128) *complex128
+String(s string) *string
+Rune(r rune) *rune
+Byte(b byte) *byte
+Time(t time.Time) *time.Time
+Error(e error) *error
+
+ 
